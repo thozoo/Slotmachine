@@ -1,0 +1,23 @@
+#felso, #also
+{
+    width: 100%;
+    background: black;
+    height: 150px;
+    z-index: 2;
+}
+
+#kozepso
+{
+    height: 500px;
+    margin: 0 auto;
+    display: block;
+    width: 614px;
+}
+
+.slot
+{
+    height: 480px;
+    border: 1px solid black;
+    width: 200px;
+    display: inline-block;
+}
