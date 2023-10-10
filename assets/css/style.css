@@ -11,7 +11,7 @@
     height: 500px;
     margin: 0px auto;
     display: block;
-    width: 614px;
+    width: 618px;
 }
 
 .slot
@@ -30,4 +30,13 @@
     margin: 0 auto;
     padding: 5px;
     z-index: 1;
+    transition: 1s;
+}
+
+#forgatogomb
+{
+    margin: 0 auto;
+    display: block;
+    font-size: 3em;
+    border-radius: 5px;
 }
