@@ -10,6 +10,22 @@ var t = [
     }
 ]
 
+var tet = 100;
+
+function AranyosVeletlenszam()
+{
+    var szam = Math.floor(Math.random()*100);
+    var r = 0;
+    if (szam<40) r=4; // citrom
+    else if (szam<60) r=5; // szilva
+    else if (szam<75) r=6; // hetes
+    else if (szam<85) r=1; // cserkó
+    else if (szam<92) r=7; // dinnye
+    else if (szam<96) r=2; // dia
+    else r=3; // jackpot
+    return r;
+}
+
 function Berak()
 {
     for (let i=0; i<t.length; i++)
@@ -17,7 +33,7 @@ function Berak()
         for (let j=0; j<t[i].sorrend.length; j++)
         {
             t[i].sorrend[j] = 
-            Math.floor(Math.random()*7)+1;
+            AranyosVeletlenszam()
         }
     }
     Rajzol();
@@ -42,7 +58,7 @@ var porogforog = null;
 
 function Forgat()
 {
-    forgatasok = 10;
+    forgatasok = 5;
     document.getElementById("forgatogomb").disabled = true;
     porogforog = setInterval(Mozdit, 240);
 }
@@ -61,7 +77,7 @@ function Mozdit()
         for (var i=0; i<t.length; i++)
         {
             t[i].sorrend.shift();
-            t[i].sorrend.push(Math.floor(Math.random()*7)+1);
+            t[i].sorrend.push(AranyosVeletlenszam());
         }
         Rajzol();
         forgatasok--;
@@ -76,5 +92,22 @@ function Mozdit()
 
 function Ertekel()
 {
+    var a = t[0].sorrend[1];
+    var b = t[1].sorrend[1];
+    var c = t[2].sorrend[1];
+
+    var szorzo = 1;
+    
+    // 1 = cseresznye
+
+    if ( a==1 || b==1 || c==1 )
+    {
+        var mennyi = 0;
+        if (a == 1) mennyi++;
+        if (b == 1) mennyi++;
+        if (c == 1) mennyi++;
+        szorzo = mennyi*10;
+        console.log("NYERT CSERESZNYÉVEL");
+    }   
 
 }
