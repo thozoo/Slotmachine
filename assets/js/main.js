@@ -26,7 +26,8 @@ function Berak()
 function Rajzol()
 {
     for (let i=0; i<t.length; i++)
-    {''
+    {
+        document.getElementById("s"+(i+1)).innerHTML = "";
         for (let y of t[i].sorrend)
         {
             document.getElementById("s"+(i+1)).innerHTML += "<img class='kiskep' src='assets/images/"+y+".png'>";
@@ -36,13 +37,15 @@ function Rajzol()
 
 Berak();
 
+var forgatasok = 5;
+
 function Forgat()
 {
-    //document.getElementById("forgatogomb").disabled = true;
+    document.getElementById("forgatogomb").disabled = true;
 
     Mozdit();
 
-    //document.getElementById("forgatogomb").disabled = false;
+    
 }
 
 function Mozdit()
@@ -53,8 +56,8 @@ function Mozdit()
 
     setTimeout(function(){
         document.getElementById("s1").getElementsByClassName("kiskep")[0].remove();
-        document.getElementById("s1").getElementsByClassName("kiskep")[0].remove();
-        document.getElementById("s1").getElementsByClassName("kiskep")[0].remove();
+        document.getElementById("s2").getElementsByClassName("kiskep")[0].remove();
+        document.getElementById("s3").getElementsByClassName("kiskep")[0].remove();
     
         for (var i=0; i<t.length; i++)
         {
@@ -62,7 +65,15 @@ function Mozdit()
             t[i].sorrend.push(Math.floor(Math.random()*7)+1);
         }
         Rajzol();
-    }, 1000);
+        forgatasok--;
+        if (forgatasok>0)
+            Mozdit();
+        else
+        {
+            document.getElementById("forgatogomb").disabled = false;
+            forgatasok = 5;
+        }
+    }, 1100);
 
    
 
