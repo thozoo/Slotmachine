@@ -42,3 +42,14 @@
     font-size: 3em;
     border-radius: 5px;
 }
+
+#vonal
+{
+    position: absolute;
+    top: 400px;
+    z-index: 100;
+    width: 100%;
+    background: red;
+    height: 2px;
+    opacity: 0.2;
+}

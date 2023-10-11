@@ -42,7 +42,7 @@ var porogforog = null;
 
 function Forgat()
 {
-    forgatasok = 5;
+    forgatasok = 10;
     document.getElementById("forgatogomb").disabled = true;
     porogforog = setInterval(Mozdit, 240);
 }
