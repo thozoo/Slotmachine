@@ -26,12 +26,10 @@ function Berak()
 function Rajzol()
 {
     for (let i=0; i<t.length; i++)
-    {
-        var szorzo=0;
+    {''
         for (let y of t[i].sorrend)
         {
-            document.getElementById("s"+(i+1)).innerHTML += "<img class='kiskep' src='assets/images/"+y+".png' style='top:"+(160*szorzo)+"px'>";
-            szorzo++;
+            document.getElementById("s"+(i+1)).innerHTML += "<img class='kiskep' src='assets/images/"+y+".png'>";
         }
     }
 }
@@ -42,12 +40,10 @@ function Forgat()
 {
     document.getElementById("forgatogomb").disabled = true;
 
-    var k = document.getElementsByClassName("kiskep");
+    document.getElementById("s1").getElementsByClassName("kiskep")[0].style.marginTop = "-160px";
+    document.getElementById("s2").getElementsByClassName("kiskep")[0].style.marginTop = "-160px";
+    document.getElementById("s3").getElementsByClassName("kiskep")[0].style.marginTop = "-160px";
 
-    for (let x of k)
-    {
-        // ITT KELL ÁLLÍTANI A TOPOT!!! DE NEM IS JÓ A TOP
-    }
 
     //document.getElementById("forgatogomb").disabled = false;
 }

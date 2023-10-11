@@ -12,6 +12,7 @@
     margin: 0px auto;
     display: block;
     width: 618px;
+    overflow-y: hidden;
 }
 
 .slot
