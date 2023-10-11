@@ -38,14 +38,13 @@ function Rajzol()
 Berak();
 
 var forgatasok = 5;
+var porogforog = null;
 
 function Forgat()
 {
+    forgatasok = 5;
     document.getElementById("forgatogomb").disabled = true;
-
-    Mozdit();
-
-    
+    porogforog = setInterval(Mozdit, 240);
 }
 
 function Mozdit()
@@ -66,15 +65,16 @@ function Mozdit()
         }
         Rajzol();
         forgatasok--;
-        if (forgatasok>0)
-            Mozdit();
-        else
+        if (forgatasok == 0) 
         {
+            clearInterval(porogforog);
+            Ertekel();
             document.getElementById("forgatogomb").disabled = false;
-            forgatasok = 5;
         }
-    }, 1100);
+    }, 210);
+}
 
-   
+function Ertekel()
+{
 
 }
